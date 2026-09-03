@@ -287,6 +287,15 @@
     .hero-trust{gap:14px}
   }
 </style>
+<!-- OP Capital · medição — GA4 + Google Ads. Cole logo antes de </head> -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P3VQP27T1Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P3VQP27T1Z');
+  gtag('config', 'AW-18428311327');
+</script>
 </head>
 <body>
 
@@ -558,6 +567,50 @@
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
   },{threshold:.14,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*70)+'ms';io.observe(el)});
+</script>
+<!-- OP Capital · eventos de conversão. Cole logo antes de </body> -->
+<script>
+(function(){
+  /* Rótulos de conversão do Google Ads — conta 988-329-0368
+     Esta página NÃO tem formulário: só a conversão de WhatsApp se aplica. */
+  var ADS_WHATSAPP = 'AW-18428311327/dQiiCLGTz-0cEJ_uptNE';
+
+  function ev(name, params){
+    try{
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(Object.assign({event:name}, params||{}));
+      if (typeof gtag === 'function') gtag('event', name, params || {});
+    }catch(e){}
+  }
+  function adsConv(sendTo){
+    try{
+      if (typeof gtag === 'function') gtag('event', 'conversion', {send_to: sendTo});
+    }catch(e){}
+  }
+  window.opTrack = ev;
+
+  /* 1. Qualquer clique em WhatsApp = lead */
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a[href*="wa.me"],a[href*="api.whatsapp.com"]') : null;
+    if (!a) return;
+    ev('generate_lead', {
+      method: 'whatsapp',
+      cta_text: (a.innerText || a.getAttribute('aria-label') || '').trim().slice(0, 60),
+      link_url: a.href
+    });
+    adsConv(ADS_WHATSAPP);
+  }, true);
+
+  /* 2. Profundidade de rolagem — sinal de qualidade do clique pago */
+  var marks = [25, 50, 75, 90], hit = {};
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement;
+    var pct = (h.scrollTop + window.innerHeight) / h.scrollHeight * 100;
+    marks.forEach(function(m){
+      if (!hit[m] && pct >= m){ hit[m] = 1; ev('scroll_depth', {percent: m}); }
+    });
+  }, {passive:true});
+})();
 </script>
 </body>
 </html>
