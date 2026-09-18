@@ -296,6 +296,11 @@
   .video-meta{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13.5px;margin-top:18px}
   .video-meta svg{width:15px;height:15px;color:var(--cyan-dark);flex:none}
   .video-sec .btn-primary{margin-top:26px}
+  /* precisa vir DEPOIS da regra base: o bloco foi anexado ao fim da folha */
+  @media(max-width:900px){
+    .video-grid{grid-template-columns:1fr;gap:36px}
+    .video-frame{max-width:300px}
+  }
 </style>
 <!-- OP Capital · medição — GA4 + Google Ads. Cole logo antes de </head> -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-P3VQP27T1Z"></script>
