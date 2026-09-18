@@ -273,7 +273,7 @@
   /* Responsive */
   @media(max-width:900px){
     .pain-grid,.steps{grid-template-columns:1fr}
-    .sol-grid,.why-grid,.ben-grid{grid-template-columns:1fr;gap:36px}
+    .sol-grid,.why-grid,.ben-grid,.video-grid{grid-template-columns:1fr;gap:36px}
     .hero-grid{grid-template-columns:1fr;gap:34px}
     .hero-copy{max-width:none}
     .foot-top{grid-template-columns:1fr;gap:30px}
@@ -286,6 +286,16 @@
     .wa-float .lbl{max-width:none}
     .hero-trust{gap:14px}
   }
+
+  /* --- Bloco de video (institucional) --- */
+  .video-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .video-frame{justify-self:center;width:100%;max-width:330px;line-height:0;
+    border-radius:26px;overflow:hidden;background:var(--navy);
+    box-shadow:0 34px 76px -22px rgba(0,24,58,.5)}
+  .video-frame video{width:100%;height:auto;display:block;aspect-ratio:9/16;background:var(--navy)}
+  .video-meta{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13.5px;margin-top:18px}
+  .video-meta svg{width:15px;height:15px;color:var(--cyan-dark);flex:none}
+  .video-sec .btn-primary{margin-top:26px}
 </style>
 <!-- OP Capital · medição — GA4 + Google Ads. Cole logo antes de </head> -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-P3VQP27T1Z"></script>
@@ -394,6 +404,30 @@
       <div class="sol-highlight">à vista</div>
       <p>o valor das suas vendas a prazo, direto na conta da empresa.</p>
       <div class="divider-flag">Antecipação de recebíveis não vira dívida no seu balanço. Você só adianta o que já é seu.</div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="pad video-sec">
+  <div class="wrap video-grid">
+    <div class="reveal">
+      <div class="sec-eyebrow">Direto de quem opera</div>
+      <h2 class="sec-title">Entenda a antecipação <span>em 1 minuto</span></h2>
+      <p class="sec-sub">Sem termo técnico e sem letra miúda: como transformar o que você já vendeu em caixa disponível agora, e por que isso não vira dívida no seu balanço.</p>
+      <div class="video-meta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        1 minuto &bull; com legendas, dá pra assistir sem som
+      </div>
+      <a class="btn-primary" href="https://wa.me/5544991496854?text=Ol%C3%A1!%20Vi%20o%20v%C3%ADdeo%20no%20site%20e%20quero%20entender%20como%20antecipar%20meus%20receb%C3%ADveis." target="_blank" rel="noopener">
+        Quero falar com um especialista
+      </a>
+    </div>
+    <div class="video-frame reveal">
+      <video controls playsinline preload="metadata" poster="video-op-capital.jpg">
+        <source src="video-op-capital.mp4" type="video/mp4">
+        Seu navegador não reproduz este vídeo.
+      </video>
     </div>
   </div>
 </section>
